@@ -15,6 +15,8 @@ var ySpeed = 5;
 	
 	//Instantiate the Player
 	player = new GameObject();
+	player.x = 100;
+	player.color = "blue";
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -30,7 +32,7 @@ function animate()
 	if((player.x - (player.width / 2)) <= 0){
 		xSpeed *= -1;
 	}
-	if((player.y + (player.width / 2)) >= canvas.width){
+	if((player.y + (player.width / 2)) >= canvas.height){
 		ySpeed *= -1;
 	}
 	if((player.y - (player.width / 2)) <= 0){
