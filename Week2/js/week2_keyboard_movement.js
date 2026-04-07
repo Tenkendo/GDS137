@@ -33,24 +33,36 @@ function animate()
 		ySpeed *= 2;
 		player.color = "red";
 		console.log("Hit Side");
+		sideCD = 10;
+	} else {
+		console.log("Side Bounce on CD");
 	}
 	if(((player.x - (player.width / 2)) < 0) && sideCD < 0){
 		xSpeed *= -2;
 		ySpeed *= 2;
 		player.color = "red";
 		console.log("Hit Side");
+		sideCD = 10;
+	} else {
+		console.log("Side Bounce on CD");
 	}
 	if(((player.y + (player.width / 2)) >= canvas.height) && bottomCD < 0){
 		ySpeed *= -0.7;
 		xSpeed *= 0.7;
 		player.color = "blue";
 		console.log("Hit Bottom");
+		bottomCD = 10;
+	} else {
+		console.log("Bottom Bounce on CD");	
 	}
-	if(((player.y - (player.width / 2)) < 0) && bottomCD < 0){
+	if(((player.y - (player.width / 2)) < 0) && topCD < 0){
 		ySpeed *= -0.7;
 		xSpeed *= 0.7;
 		player.color = "blue";
 		console.log("Hit Top");
+		topCD = 10;
+	} else {
+		console.log("Top Bounce on CD");
 	}
 	player.x += xSpeed;
 	player.y += ySpeed;
