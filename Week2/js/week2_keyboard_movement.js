@@ -34,7 +34,7 @@ function animate()
 		player.color = "red";
 		console.log("Hit Side");
 		sideCD = 10;
-	} else {
+	} else if(sideCD > 0){
 		console.log("Side Bounce on CD");
 	}
 	if(((player.x - (player.width / 2)) < 0) && sideCD < 0){
@@ -43,7 +43,7 @@ function animate()
 		player.color = "red";
 		console.log("Hit Side");
 		sideCD = 10;
-	} else {
+	} else if(sideCD > 0){
 		console.log("Side Bounce on CD");
 	}
 	if(((player.y + (player.width / 2)) >= canvas.height) && bottomCD < 0){
@@ -52,7 +52,7 @@ function animate()
 		player.color = "blue";
 		console.log("Hit Bottom");
 		bottomCD = 10;
-	} else {
+	} else if(bottomCD > 0){
 		console.log("Bottom Bounce on CD");	
 	}
 	if(((player.y - (player.width / 2)) < 0) && topCD < 0){
@@ -61,7 +61,7 @@ function animate()
 		player.color = "blue";
 		console.log("Hit Top");
 		topCD = 10;
-	} else {
+	} else if (topCD > 0){
 		console.log("Top Bounce on CD");
 	}
 	player.x += xSpeed;
