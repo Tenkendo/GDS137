@@ -27,11 +27,11 @@ function animate()
 	context.clearRect(0,0,canvas.width, canvas.height);
 
 	if((player.x + (player.width / 2)) >= canvas.width){
-		xSpeed *= -1.5;
+		xSpeed *= -1.1;
 		player.color = "red";
 	}
 	if((player.x - (player.width / 2)) <= 0){
-		xSpeed *= -1.5;
+		xSpeed *= -1.1;
 		player.color = "red";
 	}
 	if((player.y + (player.width / 2)) >= canvas.height){
