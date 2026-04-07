@@ -28,18 +28,22 @@ function animate()
 
 	if((player.x + (player.width / 2)) >= canvas.width){
 		xSpeed *= -1.1;
+		ySpeed *= 1.1;
 		player.color = "red";
 	}
 	if((player.x - (player.width / 2)) <= 0){
 		xSpeed *= -1.1;
+		ySpeed *= 1.1;
 		player.color = "red";
 	}
 	if((player.y + (player.width / 2)) >= canvas.height){
 		ySpeed *= -0.5;
+		xSpeed *= 0.5;
 		player.color = "blue";
 	}
 	if((player.y - (player.width / 2)) <= 0){
 		ySpeed *= -0.5;
+		xSpeed *= 0.5;
 		player.color = "blue";
 	}
 	player.x += xSpeed;
