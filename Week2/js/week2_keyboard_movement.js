@@ -31,7 +31,7 @@ function animate()
 		ySpeed *= 2;
 		player.color = "red";
 	}
-	if((player.x - (player.width / 2)) <= 0){
+	if((player.x - (player.width / 2)) < 0){
 		xSpeed *= -2;
 		ySpeed *= 2;
 		player.color = "red";
@@ -41,7 +41,7 @@ function animate()
 		xSpeed *= 0.7;
 		player.color = "blue";
 	}
-	if((player.y - (player.width / 2)) <= 0){
+	if((player.y - (player.width / 2)) < 0){
 		ySpeed *= -0.7;
 		xSpeed *= 0.7;
 		player.color = "blue";
@@ -73,6 +73,7 @@ function animate()
 	// }
 	
 	//Update the Screen
+	console.log("xSpeed:"+ xSpeed + " ySpeed:" + ySpeed);
 	player.drawCircle();
 }
 
