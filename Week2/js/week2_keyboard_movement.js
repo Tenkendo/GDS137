@@ -8,7 +8,9 @@ var interval = 1000/60;
 var player;
 var xSpeed = 5;
 var ySpeed = 5;
-
+var topCD = 10;
+var bottomCD = 10;
+var sideCD = 5;
 	//Set Up the Canvas
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
@@ -26,25 +28,25 @@ function animate()
 	//Erase the Screen
 	context.clearRect(0,0,canvas.width, canvas.height);
 
-	if((player.x + (player.width / 2)) >= canvas.width){
+	if(((player.x + (player.width / 2)) >= canvas.width) && sideCD < 0){
 		xSpeed *= -2;
 		ySpeed *= 2;
 		player.color = "red";
 		console.log("Hit Side");
 	}
-	if((player.x - (player.width / 2)) < 0){
+	if(((player.x - (player.width / 2)) < 0) && sideCD < 0){
 		xSpeed *= -2;
 		ySpeed *= 2;
 		player.color = "red";
 		console.log("Hit Side");
 	}
-	if((player.y + (player.width / 2)) >= canvas.height){
+	if(((player.y + (player.width / 2)) >= canvas.height) && bottomCD < 0){
 		ySpeed *= -0.7;
 		xSpeed *= 0.7;
 		player.color = "blue";
 		console.log("Hit Bottom");
 	}
-	if((player.y - (player.width / 2)) < 0){
+	if(((player.y - (player.width / 2)) < 0) && bottomCD < 0){
 		ySpeed *= -0.7;
 		xSpeed *= 0.7;
 		player.color = "blue";
@@ -52,6 +54,9 @@ function animate()
 	}
 	player.x += xSpeed;
 	player.y += ySpeed;
+	topCD -= 1;
+	bottomCD -= 1;
+	sideCD -= 1;
 	
 	
 	// //Move the Player to the right
