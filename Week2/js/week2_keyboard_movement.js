@@ -38,8 +38,8 @@ function animate()
 	if((player.y - (player.width / 2)) <= 0){
 		ySpeed *= -1;
 	}
-	player.x += speed;
-	player.y += speed;
+	player.x += xSpeed;
+	player.y += ySpeed;
 	
 	
 	// //Move the Player to the right
