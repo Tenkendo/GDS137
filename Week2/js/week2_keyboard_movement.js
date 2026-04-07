@@ -27,23 +27,23 @@ function animate()
 	context.clearRect(0,0,canvas.width, canvas.height);
 
 	if((player.x + (player.width / 2)) >= canvas.width){
-		xSpeed *= -1.1;
-		ySpeed *= 1.1;
+		xSpeed *= -1.5;
+		ySpeed *= 1.5;
 		player.color = "red";
 	}
 	if((player.x - (player.width / 2)) <= 0){
-		xSpeed *= -1.1;
-		ySpeed *= 1.1;
+		xSpeed *= -1.5;
+		ySpeed *= 1.5;
 		player.color = "red";
 	}
 	if((player.y + (player.width / 2)) >= canvas.height){
-		ySpeed *= -0.5;
-		xSpeed *= 0.5;
+		ySpeed *= -0.4;
+		xSpeed *= 0.4;
 		player.color = "blue";
 	}
 	if((player.y - (player.width / 2)) <= 0){
-		ySpeed *= -0.5;
-		xSpeed *= 0.5;
+		ySpeed *= -0.4;
+		xSpeed *= 0.4;
 		player.color = "blue";
 	}
 	player.x += xSpeed;
