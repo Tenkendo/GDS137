@@ -30,21 +30,25 @@ function animate()
 		xSpeed *= -2;
 		ySpeed *= 2;
 		player.color = "red";
+		console.log("Hit Side");
 	}
 	if((player.x - (player.width / 2)) < 0){
 		xSpeed *= -2;
 		ySpeed *= 2;
 		player.color = "red";
+		console.log("Hit Side");
 	}
 	if((player.y + (player.width / 2)) >= canvas.height){
 		ySpeed *= -0.7;
 		xSpeed *= 0.7;
 		player.color = "blue";
+		console.log("Hit Bottom");
 	}
 	if((player.y - (player.width / 2)) < 0){
 		ySpeed *= -0.7;
 		xSpeed *= 0.7;
 		player.color = "blue";
+		console.log("Hit Top");
 	}
 	player.x += xSpeed;
 	player.y += ySpeed;
