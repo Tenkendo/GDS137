@@ -64,6 +64,18 @@ function animate()
 	} else if (topCD > 0){
 		console.log("Top Bounce on CD");
 	}
+	if (xSpeed > 50){
+		xSpeed = 50;
+	}
+	if (ySpeed > 50){
+		ySpeed = 50;
+	}
+	if (xSpeed < -50){
+		xSpeed = -50;
+	}
+	if (ySpeed < -50){
+		ySpeed = -50;
+	}
 	player.x += xSpeed;
 	player.y += ySpeed;
 	topCD -= 1;
